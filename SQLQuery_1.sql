@@ -38,3 +38,19 @@ alter table employee_payroll add gender char(1)
 UPDATE employee_payroll set gender='F' where name='Ankita'
 --update same value for two or more row at a time
 UPDATE employee_payroll set gender='M' WHERE id in (1,2,4)
+
+-- UC_07 - Use database function to find sum,avg,min,max
+-- To get sum of salary of all male employee
+SELECT gender, sum(salary) from employee_payroll  where gender = 'M' group by gender
+-- To get avg of salary of all female employee
+SELECT gender, avg(salary) from employee_payroll where gender = 'F' group by gender
+-- To get sum of salary of both male and female by using group by
+SELECT gender, sum(salary) from employee_payroll  group by gender
+-- To get avg of salary of both male and female by using group by
+SELECT gender, avg(salary) from employee_payroll  group by gender
+-- To count number of male and female employee 
+SELECT gender, count(salary) from employee_payroll  group by gender;
+-- To get maximum salary from table
+SELECT max(salary) "Highest_Salary" from employee_payroll
+--To get minimum salary from table
+SELECT min(salary) "Lowest_Salary" from employee_payroll
