@@ -24,3 +24,10 @@ INSERT into employee_payroll VALUES
 
 -- UC_04 - Retrieve all data from table
 SELECT * FROM employee_payroll
+
+-- UC_05 - Retrieve salary for particular employee
+SELECT salary FROM employee_payroll where name='Piyush'
+-- Retrieve all data for employee in a given range of start date using getdate()
+SELECT * FROM employee_payroll WHERE start_date between '2020-01-01' and GETDATE()
+-- Retrieve salary for employee in a given range of start date using getdate()
+SELECT salary FROM employee_payroll WHERE start_date between '2020-01-01' and GETDATE()
