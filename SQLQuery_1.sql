@@ -68,7 +68,7 @@ UPDATE employee_payroll set employee_phone='9801239870',department='CS' where na
 SELECT * FROM employee_payroll
 
 -- UC_09 - Rename salary to basic pay and add column deduction ,taxablepay ,incometax and netpay
--- To rename department column as basicpay
+-- To rename salary column as basicpay
 sp_rename 'employee_payroll.salary','basic_pay'
 --To add more column in table
 ALTER TABLE employee_payroll ADD
