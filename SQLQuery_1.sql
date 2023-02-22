@@ -86,3 +86,5 @@ UPDATE employee_payroll set net_pay=(basic_pay-deduction)
 UPDATE employee_payroll set taxable_pay=0,income_tax=0
 SELECT * from employee_payroll
 
+-- UC_10 - Adding Duplicate Name
+INSERT into employee_payroll values('Piyush','28000','2023-01-02','M','9876787671','India','IT','2000',0,0,null)
