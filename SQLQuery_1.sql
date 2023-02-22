@@ -54,3 +54,15 @@ SELECT gender, count(salary) from employee_payroll  group by gender;
 SELECT max(salary) "Highest_Salary" from employee_payroll
 --To get minimum salary from table
 SELECT min(salary) "Lowest_Salary" from employee_payroll
+
+-- UC_08 - To add column employee phone ,address and department in table
+ALTER table employee_payroll ADD
+employee_phone varchar(15),
+address VARCHAR(200) not null DEFAULT 'India',
+department VARCHAR(200)
+-- To update the column by name
+UPDATE employee_payroll set employee_phone='9879879870',department='CS' where name='Piyush'
+UPDATE employee_payroll set employee_phone='9871239870',department='Mech' where name='Ashwani'
+UPDATE employee_payroll set employee_phone='9870129870',department='IT' where name='Ankita'
+UPDATE employee_payroll set employee_phone='9801239870',department='CS' where name='Ravi'
+SELECT * FROM employee_payroll
