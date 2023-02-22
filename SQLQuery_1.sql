@@ -31,3 +31,10 @@ SELECT salary FROM employee_payroll where name='Piyush'
 SELECT * FROM employee_payroll WHERE start_date between '2020-01-01' and GETDATE()
 -- Retrieve salary for employee in a given range of start date using getdate()
 SELECT salary FROM employee_payroll WHERE start_date between '2020-01-01' and GETDATE()
+
+-- UC_06 - Alter table to add column
+alter table employee_payroll add gender char(1)
+-- update row
+UPDATE employee_payroll set gender='F' where name='Ankita'
+--update same value for two or more row at a time
+UPDATE employee_payroll set gender='M' WHERE id in (1,2,4)
