@@ -66,3 +66,23 @@ UPDATE employee_payroll set employee_phone='9871239870',department='Mech' where 
 UPDATE employee_payroll set employee_phone='9870129870',department='IT' where name='Ankita'
 UPDATE employee_payroll set employee_phone='9801239870',department='CS' where name='Ravi'
 SELECT * FROM employee_payroll
+
+-- UC_09 - Rename salary to basic pay and add column deduction ,taxablepay ,incometax and netpay
+-- To rename department column as basicpay
+sp_rename 'employee_payroll.salary','basic_pay'
+--To add more column in table
+ALTER TABLE employee_payroll ADD
+deduction money,
+taxable_pay money,
+income_tax money,
+net_pay money
+-- Updating deduction column where gender=F
+UPDATE employee_payroll set deduction=1000 where gender='F'
+-- Updating deduction column where gender=M
+UPDATE employee_payroll set deduction=2000 WHERE gender='M'
+-- Updating net_pay column
+UPDATE employee_payroll set net_pay=(basic_pay-deduction)
+-- Updating incometax and taxablepay column
+UPDATE employee_payroll set taxable_pay=0,income_tax=0
+SELECT * from employee_payroll
+
