@@ -21,3 +21,6 @@ INSERT into employee_payroll VALUES
 ('Ashwani',24000,'2022-07-06'),
 ('Ankita',32000,'2019-03-18'),
 ('Ravi',26000,'2018-05-22')
+
+-- UC_04 - Retrieve all data from table
+SELECT * FROM employee_payroll
